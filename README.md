@@ -33,3 +33,39 @@ flowchart TD
     end
     
     A & B & C & D & E & F
+```
+## 🧠 Model Development & Prediction Pipeline
+
+1. **📊 Model Development**  
+   The `model_evaluation_and_tuning.py` script serves as the core of the machine learning pipeline. It handles everything from data cleaning and preprocessing to training multiple regression models.  
+   This script is responsible for finding the most accurate model and evaluating its performance on metrics like:  
+   - **MAE** (Mean Absolute Error)  
+   - **MSE** (Mean Squared Error)  
+   - **R² Score**  
+
+2. **💾 Model Persistence**  
+   After identifying the best-performing model, the script serializes it into a `best_model.pkl` file.  
+   Saving the model ensures it is ready for immediate use without needing to be retrained, which is essential for rapid deployment.
+
+3. **🌐 Prediction Service**  
+   The `streamlit_app.py` file acts as the front-end for the application. It loads the `best_model.pkl` file at startup and provides a user interface.  
+   The web application:  
+   - Accepts user inputs for a new patient  
+   - Passes the data to the loaded model  
+   - Generates a real-time prediction for the patient's likelihood of a stroke  
+
+---
+
+## 📚 Dependencies
+
+### 1. Core Libraries
+- **🌐 streamlit**: Main library for building the web application  
+- **🧠 scikit-learn**: For data preprocessing, model training, and evaluation  
+- **💾 pickle**: For serializing and deserializing the trained model  
+
+### 2. Data Science & Visualization
+- **🐼 pandas**: For data manipulation and analysis  
+- **🔢 numpy**: For numerical operations  
+- **⚡ xgboost & catboost**: For high-performance gradient boosting models  
+- **📊 matplotlib & seaborn**: For creating plots and visualizations
+
