@@ -21,8 +21,8 @@ The project's architecture is a streamlined, three-step pipeline designed for ef
 ```mermaid
 flowchart TD
     subgraph Data & Training Pipeline
-        A[📄 healthcare-dataset-stroke-data.csv] -->|Reads & Preprocesses Data| B[🧪 model_evaluation_and_tuning.py]
-        B -->|Trains & Evaluates Models| C[💾 best_model.pkl]
+        A[📄 healthcare-dataset-stroke-data.csv] -->|Reads & Preprocesses Data| B[⚙️ model_evaluation_and_tuning.py]
+        B -->|Trains & Evaluates Models| C(📦 best_model.pkl)
     end
     
     subgraph Prediction Service
